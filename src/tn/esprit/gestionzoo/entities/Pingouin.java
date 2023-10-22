@@ -17,4 +17,9 @@ public class Pingouin extends  Aquatique{
     public void setSwimmingDepth(float swimmingDepth) {
         this.swimmingDepth = swimmingDepth;
     }
+
+    @Override
+    public void swim() {
+        System.out.println("Le pingouin nage en battant des ailes.");
+    }
 }

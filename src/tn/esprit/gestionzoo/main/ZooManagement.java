@@ -19,6 +19,7 @@ public class ZooManagement {
         myZoo.setName("Wildlife Park");
 
 
+
         Animal dog = new Animal("Canine", "Snoopy", 2, true);
 
         System.out.println(myZoo);
@@ -40,8 +41,10 @@ public class ZooManagement {
 
         //Instrunction 21
         Dauphin D = new Dauphin("Canine", "Snoopy", 2, true,"AEE4",1.45f);
+        myZoo.addAquaticAnimal(D);
         Pingouin P =new Pingouin();
         Terrestres T =new Terrestres();
+        myZoo.addAquaticAnimal(P);
 
 
     }
