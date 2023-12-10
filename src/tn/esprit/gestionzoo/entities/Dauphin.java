@@ -1,5 +1,6 @@
 package tn.esprit.gestionzoo.entities;
-
+import tn.esprit.gestionzoo.entities.Food.food;
+import tn.esprit.gestionzoo.interfaces.*;
 
 public class Dauphin extends  Aquatique{
     protected float swimmingSpeed;
@@ -22,4 +23,10 @@ public class Dauphin extends  Aquatique{
     public void swim() {
         System.out.println("Le dauphin nage gracieusement.");
     }
+
+    @Override
+    public void eatMeat(food meat) {
+        System.out.println("The Terrestrial " + getName() + " is eating " + meat);
+    }
+
 }

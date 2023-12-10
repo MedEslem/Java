@@ -1,6 +1,7 @@
 package tn.esprit.gestionzoo.main;
-
+import tn.esprit.gestionzoo.entities.Food.food;
 import tn.esprit.gestionzoo.entities.*;
+import tn.esprit.gestionzoo.interfaces.*;
 
 public class ZooManagement {
 
@@ -64,7 +65,19 @@ public class ZooManagement {
             }catch (InvalidAgeException A){
         System.out.println("Age est negative : " + A.getMessage());
         }
+        //Prosit8
 
+        Pingouin penguin = new Pingouin("Wild animals", "Pingu", 3, true, "Ocean", 25.6f);
+        penguin.eatMeat(food.MEAT);
+
+        Dauphin dolphin = new Dauphin("Delphinoidea", "Willy", 5, true, "Ocean", 34.2f);
+        dolphin.eatMeat(food.MEAT);
+
+        Terrestres terrestrial = new Terrestres("Bears", "Winnie", 6, true, 4);
+        terrestrial.eatMeatendPlant(food.BOTH);
+
+        Terrestres terrestrial2 = new Terrestres("Rabbits", "Bugs bunny", 2, true, 4);
+        terrestrial2.eatPlant(food.PLANT);
     }
     }
 

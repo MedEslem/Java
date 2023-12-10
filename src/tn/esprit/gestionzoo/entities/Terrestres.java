@@ -1,20 +1,40 @@
 package tn.esprit.gestionzoo.entities;
 
-public class Terrestres extends  Animal{
-    protected int nbrLegs;
+import tn.esprit.gestionzoo.entities.Food.food;
+import tn.esprit.gestionzoo.interfaces.Omnivore;
 
-    public Terrestres(){
+public class Terrestres extends Animal implements Omnivore<food> {
 
-    }
-    public Terrestres(String family, String name, int age, boolean isMammal,String Habitat,int nbrL){
-    super(family, name, age, isMammal);
-    this.nbrLegs=nbrL;}
+    private int nbrLegs;
 
-    public int getNbrLegs() {
-        return nbrLegs;
+    public Terrestres() {
     }
 
-    public void setNbrLegs(int nbrLegs) {
+    public Terrestres(String family, String name, int age, boolean isMammal, int nbrLegs) {
+        super(family, name, age, isMammal);
         this.nbrLegs = nbrLegs;
+    }
+
+
+    @Override
+    public String toString() {
+        return super.toString() + ", nbrLegs:" + nbrLegs;
+    }
+
+    @Override
+    public void eatMeat(food meat) {
+        System.out.println("The Terrestrial " + getName() + " is eating " + meat);
+    }
+
+
+    @Override
+    public void eatPlant(food plant) {
+        System.out.println("The Terrestrial " + getName() + " is eating " + plant);
+
+    }
+
+    @Override
+    public void eatMeatendPlant(food Food) {
+        System.out.println("The Terrestrial " + getName() + " is eating " + Food);
     }
 }
