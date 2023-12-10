@@ -45,7 +45,7 @@ public class Zoo {
         this.nbrAnimals = nbrAnimals;
     }
 
-    private final int nbrCages = 25;
+    private final int nbrCages = 3;
     private int nbrAnimals;
 
 
@@ -63,14 +63,21 @@ public class Zoo {
         System.out.println("Name: " + name + ", City: " + city + ", N° Cages/Animals: " + nbrCages);
     }
 
-    public boolean addAnimal(Animal animal , Zoo Z) {
-        if (searchAnimal(animal) != -1)
-            return false;
-        if (ZooisFull(Z)== true)
-            return false;
+    public void addAnimal(Animal animal, Zoo Z) throws ZooFullException,InvalidAgeException  {
+        if (searchAnimal(animal) != -1) {
+            throw new ZooFullException("Animal Already exist");
+        }
+
+        if (animal.getAge() < 0) {
+            throw new InvalidAgeException("L'âge de l'animal ne peut pas être négatif.");
+        }
+        if (ZooisFull(Z)) {
+       //     System.out.println("Zoo is full");
+            throw new ZooFullException("isFull");
+                    }
+
         animals[nbrAnimals] = animal;
         nbrAnimals++;
-        return true;
     }
 
     public boolean removeAnimal(Animal animal) {
@@ -108,7 +115,6 @@ public class Zoo {
              return false;
         }
         else {
-            System.out.println("tn.esprit.gestionzoo.entities.Zoo is FULL");
             return true;
         }
     }

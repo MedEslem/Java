@@ -19,14 +19,14 @@ public class ZooManagement {
         myZoo.setName("Wildlife Park");
 
 
-
         Animal dog = new Animal("Canine", "Snoopy", 2, true);
-
-        System.out.println(myZoo);
+        Animal Ours = new Animal("QDD", "AESS", -5, true);
+        Animal cat = new Animal("Cats", "Tom", 2, true);
+/*        System.out.println(myZoo);
         System.out.println(myZoo.toString());
 
-        System.out.println(myZoo.addAnimal(lion,myZoo));
-        System.out.println(myZoo.addAnimal(dog,myZoo));
+        myZoo.addAnimal(lion, myZoo);
+        myZoo.addAnimal(dog, myZoo);
 
         myZoo.displayAnimals();
 
@@ -45,9 +45,28 @@ public class ZooManagement {
         Pingouin P =new Pingouin();
         Terrestres T =new Terrestres();
         myZoo.addAquaticAnimal(P);
+*/
 
+            try {
+                myZoo.addAnimal(lion, myZoo);
+                System.out.println("Nombre d'animaux : " + myZoo.getNbrAnimals());
 
+                myZoo.addAnimal(dog, myZoo);
+                System.out.println("Nombre d'animaux : " + myZoo.getNbrAnimals());
+
+                myZoo.addAnimal(Ours, myZoo);
+                System.out.println("Nombre d'animaux : " + myZoo.getNbrAnimals());
+
+                myZoo.addAnimal(cat, myZoo);
+                System.out.println("Nombre d'animaux : " + myZoo.getNbrAnimals());
+            } catch (ZooFullException e){
+                System.out.println("Le zoo est plein : " + e.getMessage());
+            }catch (InvalidAgeException A){
+        System.out.println("Age est negative : " + A.getMessage());
+        }
+
+    }
     }
 
 
-}
+
