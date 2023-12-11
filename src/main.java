@@ -1,9 +1,9 @@
 import entities.*;
-import interfaces.IGestion;
+import interfaces.*;
 public class main {
 
     public static void main(String[] args) {
-        SocieteArrayList societe = new SocieteArrayList();
+       /* SocieteArrayList societe = new SocieteArrayList();
 
         Employe e1 = new Employe(1, "Mohamed", "Amine", "IT", 5);
         Employe e2 = new Employe(2, "Ali", "Yassine", "RH", 4);
@@ -26,7 +26,16 @@ public class main {
         societe.displayEmploye();
 
         societe.trierEmployeParNomDépartementEtGrade();
-        societe.displayEmploye();
+        societe.displayEmploye();*/
+        DepartementHashSet D = new DepartementHashSet();
+
+        D.ajouterDepartement(new Departement(5, "A1", 25));
+        D.ajouterDepartement(new Departement(2, "A2", 28));
+        D.ajouterDepartement(new Departement(8, "A26", 32));
+        D.displayDepartement();
+        System.out.println(D.rechercherDepartement("J24"));
+        System.out.println(D.trierDepartementById()); //It works fine
+
     }
 }
 
