@@ -31,14 +31,6 @@ public class Employe implements Comparable<Employe> {
         this.prenom = prenom;
     }
 
-    public String getNomDepartement() {
-        return nomDepartement;
-    }
-
-    public void setNomDepartement(String nomDepartement) {
-        this.nomDepartement = nomDepartement;
-    }
-
     public int getGrade() {
         return grade;
     }
@@ -56,6 +48,15 @@ public class Employe implements Comparable<Employe> {
     }
 
     private String prenom;
+
+    public String getNomDepartement() {
+        return nomDepartement;
+    }
+
+    public void setNomDepartement(String nomDepartement) {
+        this.nomDepartement = nomDepartement;
+    }
+
     private String nomDepartement;
     private int grade;
 
